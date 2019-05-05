@@ -1,22 +1,22 @@
 PODS:
-  - RxSwift (5.0.1)
+  - RxSwift (4.0.0)
 
 DEPENDENCIES:
-  - "RxSwift (from `git@github.com:kingleekong/RxSwift.git`, commit `b3e888b4972d9bc76495dd74d30a8c7fad4b9395`)"
+  - "RxSwift (from `git@github.com:kingleekong/RxSwift.git`, commit `12cccb17`)"
 
 EXTERNAL SOURCES:
   RxSwift:
-    :commit: b3e888b4972d9bc76495dd74d30a8c7fad4b9395
+    :commit: 12cccb17
     :git: "git@github.com:kingleekong/RxSwift.git"
 
 CHECKOUT OPTIONS:
   RxSwift:
-    :commit: b3e888b4972d9bc76495dd74d30a8c7fad4b9395
+    :commit: 12cccb17
     :git: "git@github.com:kingleekong/RxSwift.git"
 
 SPEC CHECKSUMS:
-  RxSwift: 3a0c158ad22a75080a707abd9dc9191149e03522
+  RxSwift: 3308580de63238d5a2ead3064c32af2cc97ba949
 
-PODFILE CHECKSUM: 755ec0332d6c38d8ee509a23d0cc9d761210af54
+PODFILE CHECKSUM: ffa9fc945f39cb967e021959dff2cf2a1d99c442
 
 COCOAPODS: 1.6.0

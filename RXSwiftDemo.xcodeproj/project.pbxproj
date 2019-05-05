@@ -17,6 +17,7 @@
 		FC17EA29227DE91C00F3DC8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC17EA27227DE91C00F3DC8F /* LaunchScreen.storyboard */; };
 		FC17EA34227DE91D00F3DC8F /* RXSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17EA33227DE91D00F3DC8F /* RXSwiftDemoTests.swift */; };
 		FC17EA3F227DE91D00F3DC8F /* RXSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17EA3E227DE91D00F3DC8F /* RXSwiftDemoUITests.swift */; };
+		FCEA1705227EBF4800D2ACED /* MyRXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA1704227EBF4800D2ACED /* MyRXViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FC17EA3E227DE91D00F3DC8F /* RXSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXSwiftDemoUITests.swift; sourceTree = "<group>"; };
 		FC17EA40227DE91D00F3DC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC17EA4C227DEAA800F3DC8F /* RXSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RXSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FCEA1704227EBF4800D2ACED /* MyRXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRXViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				FC17EA1E227DE91C00F3DC8F /* AppDelegate.swift */,
 				FC17EA20227DE91C00F3DC8F /* ViewController.swift */,
+				FCEA1704227EBF4800D2ACED /* MyRXViewController.swift */,
 				FC17EA22227DE91C00F3DC8F /* Main.storyboard */,
 				FC17EA25227DE91C00F3DC8F /* Assets.xcassets */,
 				FC17EA27227DE91C00F3DC8F /* LaunchScreen.storyboard */,
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC17EA21227DE91C00F3DC8F /* ViewController.swift in Sources */,
+				FCEA1705227EBF4800D2ACED /* MyRXViewController.swift in Sources */,
 				FC17EA1F227DE91C00F3DC8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,13 +504,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -555,12 +560,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -580,7 +586,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kong.RXSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -600,7 +606,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kong.RXSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

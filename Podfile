@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 
 def rx
-  pod 'RxSwift', :git => 'git@github.com:kingleekong/RxSwift.git', :commit => 'b3e888b4972d9bc76495dd74d30a8c7fad4b9395', :inhibit_warnings => true
+  pod 'RxSwift', :git => 'git@github.com:kingleekong/RxSwift.git', :commit => '12cccb17', :inhibit_warnings => true
     #pod 'RxSwift', :path => '/Users/kong/Desktop/STCode/RxSwift/', :inhibit_warnings => true
 end
 
