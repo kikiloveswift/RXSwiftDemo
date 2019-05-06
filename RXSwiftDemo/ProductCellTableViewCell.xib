@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="130" id="KGk-i7-Jjw" customClass="ProductCellTableViewCell" customModule="RXSwiftDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tIF-ea-oc9">
+                        <rect key="frame" x="16" y="15" width="78" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="78" id="7C2-mY-9Cc"/>
+                            <constraint firstAttribute="height" constant="100" id="olY-Ft-fhz"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浪漫三岛希腊圣岛米岛扎金索斯11日游【20人小团/沉船湾/悬崖酒店】" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDJ-gE-Bse">
+                        <rect key="frame" x="109" y="15" width="250" height="42"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="42" id="KAm-uc-NMe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雅典升五星酒店/圣托里尼直飞雅典/卫城博物馆/雅典一整天游览/伯罗奔尼撒半岛" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duj-Ja-I9Q">
+                        <rect key="frame" x="109" y="57" width="250" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="e3y-ig-Gnl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥19999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUe-T2-oJk">
+                        <rect key="frame" x="109" y="94" width="250" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="eVk-DL-R1D"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.33333333333333331" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KDJ-gE-Bse" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="58G-j4-gum"/>
+                    <constraint firstItem="tIF-ea-oc9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="B49-97-34e"/>
+                    <constraint firstItem="Duj-Ja-I9Q" firstAttribute="top" secondItem="KDJ-gE-Bse" secondAttribute="bottom" id="OQj-hm-hp6"/>
+                    <constraint firstItem="PUe-T2-oJk" firstAttribute="bottom" secondItem="tIF-ea-oc9" secondAttribute="bottom" id="Pgs-Oz-BZN"/>
+                    <constraint firstItem="Duj-Ja-I9Q" firstAttribute="leading" secondItem="KDJ-gE-Bse" secondAttribute="leading" id="TcA-L1-NQC"/>
+                    <constraint firstItem="PUe-T2-oJk" firstAttribute="trailing" secondItem="Duj-Ja-I9Q" secondAttribute="trailing" id="cQj-VW-Au3"/>
+                    <constraint firstItem="KDJ-gE-Bse" firstAttribute="top" secondItem="tIF-ea-oc9" secondAttribute="top" id="cxD-uJ-KkT"/>
+                    <constraint firstItem="tIF-ea-oc9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dUt-1P-F8S"/>
+                    <constraint firstItem="KDJ-gE-Bse" firstAttribute="leading" secondItem="tIF-ea-oc9" secondAttribute="trailing" constant="15" id="k32-Kl-DtT"/>
+                    <constraint firstItem="Duj-Ja-I9Q" firstAttribute="trailing" secondItem="KDJ-gE-Bse" secondAttribute="trailing" id="mf1-AP-s7z"/>
+                    <constraint firstItem="PUe-T2-oJk" firstAttribute="leading" secondItem="Duj-Ja-I9Q" secondAttribute="leading" id="yN1-h5-y7r"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="name" destination="KDJ-gE-Bse" id="mp7-qg-rJb"/>
+                <outlet property="price" destination="PUe-T2-oJk" id="ES0-s5-ujY"/>
+                <outlet property="productImage" destination="tIF-ea-oc9" id="cmQ-fD-cP4"/>
+                <outlet property="subName" destination="Duj-Ja-I9Q" id="KQk-1C-Hiz"/>
+            </connections>
+            <point key="canvasLocation" x="-290.39999999999998" y="-1.7991004497751126"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -17,7 +17,11 @@
 		FC17EA29227DE91C00F3DC8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC17EA27227DE91C00F3DC8F /* LaunchScreen.storyboard */; };
 		FC17EA34227DE91D00F3DC8F /* RXSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17EA33227DE91D00F3DC8F /* RXSwiftDemoTests.swift */; };
 		FC17EA3F227DE91D00F3DC8F /* RXSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17EA3E227DE91D00F3DC8F /* RXSwiftDemoUITests.swift */; };
-		FCEA1705227EBF4800D2ACED /* MyRXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA1704227EBF4800D2ACED /* MyRXViewController.swift */; };
+		FCABE6652280094C006D1DD2 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABE6642280094C006D1DD2 /* ProductTableViewController.swift */; };
+		FCABE66822800C2C006D1DD2 /* ProductCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABE66622800C2C006D1DD2 /* ProductCellTableViewCell.swift */; };
+		FCABE66922800C2C006D1DD2 /* ProductCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCABE66722800C2C006D1DD2 /* ProductCellTableViewCell.xib */; };
+		FCABE66B22800C41006D1DD2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABE66A22800C41006D1DD2 /* Product.swift */; };
+		FCABE66D22801874006D1DD2 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = FCABE66C22801874006D1DD2 /* product.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +65,11 @@
 		FC17EA3E227DE91D00F3DC8F /* RXSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXSwiftDemoUITests.swift; sourceTree = "<group>"; };
 		FC17EA40227DE91D00F3DC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC17EA4C227DEAA800F3DC8F /* RXSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RXSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		FCEA1704227EBF4800D2ACED /* MyRXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRXViewController.swift; sourceTree = "<group>"; };
+		FCABE6642280094C006D1DD2 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		FCABE66622800C2C006D1DD2 /* ProductCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellTableViewCell.swift; sourceTree = "<group>"; };
+		FCABE66722800C2C006D1DD2 /* ProductCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCellTableViewCell.xib; sourceTree = "<group>"; };
+		FCABE66A22800C41006D1DD2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FCABE66C22801874006D1DD2 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +151,15 @@
 			children = (
 				FC17EA1E227DE91C00F3DC8F /* AppDelegate.swift */,
 				FC17EA20227DE91C00F3DC8F /* ViewController.swift */,
-				FCEA1704227EBF4800D2ACED /* MyRXViewController.swift */,
+				FCABE6642280094C006D1DD2 /* ProductTableViewController.swift */,
+				FCABE66622800C2C006D1DD2 /* ProductCellTableViewCell.swift */,
+				FCABE66722800C2C006D1DD2 /* ProductCellTableViewCell.xib */,
+				FCABE66A22800C41006D1DD2 /* Product.swift */,
 				FC17EA22227DE91C00F3DC8F /* Main.storyboard */,
 				FC17EA25227DE91C00F3DC8F /* Assets.xcassets */,
 				FC17EA27227DE91C00F3DC8F /* LaunchScreen.storyboard */,
 				FC17EA2A227DE91C00F3DC8F /* Info.plist */,
+				FCABE66C22801874006D1DD2 /* product.json */,
 			);
 			path = RXSwiftDemo;
 			sourceTree = "<group>";
@@ -279,8 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC17EA29227DE91C00F3DC8F /* LaunchScreen.storyboard in Resources */,
+				FCABE66922800C2C006D1DD2 /* ProductCellTableViewCell.xib in Resources */,
 				FC17EA26227DE91C00F3DC8F /* Assets.xcassets in Resources */,
 				FC17EA24227DE91C00F3DC8F /* Main.storyboard in Resources */,
+				FCABE66D22801874006D1DD2 /* product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,12 +391,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RXSwiftDemo/Pods-RXSwiftDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -397,8 +413,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC17EA21227DE91C00F3DC8F /* ViewController.swift in Sources */,
-				FCEA1705227EBF4800D2ACED /* MyRXViewController.swift in Sources */,
+				FCABE66822800C2C006D1DD2 /* ProductCellTableViewCell.swift in Sources */,
+				FCABE6652280094C006D1DD2 /* ProductTableViewController.swift in Sources */,
 				FC17EA1F227DE91C00F3DC8F /* AppDelegate.swift in Sources */,
+				FCABE66B22800C41006D1DD2 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

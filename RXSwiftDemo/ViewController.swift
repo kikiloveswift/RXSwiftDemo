@@ -35,7 +35,7 @@ final class ViewController: UITableViewController {
     
     func setupData() {
         dataArr = [
-            "MyRXViewController",
+            "ProductTableViewController"
         ]
     }
     

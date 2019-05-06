@@ -6,10 +6,15 @@ def rx
     #pod 'RxSwift', :path => '/Users/kong/Desktop/STCode/RxSwift/', :inhibit_warnings => true
 end
 
+def thirdPart
+  pod 'SDWebImage', '~> 4.0'
+end
+
 target 'RXSwiftDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   rx
+  thirdPart
 
   # Pods for RXSwiftDemo
 
