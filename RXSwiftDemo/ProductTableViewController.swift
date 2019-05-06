@@ -31,7 +31,7 @@ final class ProductTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "ProductCellTableViewCell", bundle: nil), forCellReuseIdentifier: identifier)
         tableView.tableFooterView = UIView()
         
-        self.title = "爱琴海"
+        self.title = "希腊"
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.view.backgroundColor = UIColor.white
     }
@@ -71,7 +71,7 @@ final class ProductTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10//dataArr.count
+        return dataArr.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
