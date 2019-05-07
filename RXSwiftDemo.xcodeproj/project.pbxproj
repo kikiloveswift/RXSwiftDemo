@@ -22,6 +22,8 @@
 		FCABE66922800C2C006D1DD2 /* ProductCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCABE66722800C2C006D1DD2 /* ProductCellTableViewCell.xib */; };
 		FCABE66B22800C41006D1DD2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABE66A22800C41006D1DD2 /* Product.swift */; };
 		FCABE66D22801874006D1DD2 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = FCABE66C22801874006D1DD2 /* product.json */; };
+		FCFB2FE722812CFC00ECA507 /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB2FE622812CFC00ECA507 /* ModelParser.swift */; };
+		FCFB2FE9228137E600ECA507 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB2FE8228137E600ECA507 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		FCABE66722800C2C006D1DD2 /* ProductCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCellTableViewCell.xib; sourceTree = "<group>"; };
 		FCABE66A22800C41006D1DD2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FCABE66C22801874006D1DD2 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
+		FCFB2FE622812CFC00ECA507 /* ModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelParser.swift; sourceTree = "<group>"; };
+		FCFB2FE8228137E600ECA507 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 				FCABE66622800C2C006D1DD2 /* ProductCellTableViewCell.swift */,
 				FCABE66722800C2C006D1DD2 /* ProductCellTableViewCell.xib */,
 				FCABE66A22800C41006D1DD2 /* Product.swift */,
+				FCFB2FE8228137E600ECA507 /* ViewModel.swift */,
+				FCFB2FE622812CFC00ECA507 /* ModelParser.swift */,
 				FC17EA22227DE91C00F3DC8F /* Main.storyboard */,
 				FC17EA25227DE91C00F3DC8F /* Assets.xcassets */,
 				FC17EA27227DE91C00F3DC8F /* LaunchScreen.storyboard */,
@@ -392,6 +398,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-RXSwiftDemo/Pods-RXSwiftDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -399,6 +406,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,11 +420,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFB2FE722812CFC00ECA507 /* ModelParser.swift in Sources */,
 				FC17EA21227DE91C00F3DC8F /* ViewController.swift in Sources */,
 				FCABE66822800C2C006D1DD2 /* ProductCellTableViewCell.swift in Sources */,
 				FCABE6652280094C006D1DD2 /* ProductTableViewController.swift in Sources */,
 				FC17EA1F227DE91C00F3DC8F /* AppDelegate.swift in Sources */,
 				FCABE66B22800C41006D1DD2 /* Product.swift in Sources */,
+				FCFB2FE9228137E600ECA507 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

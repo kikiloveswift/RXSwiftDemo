@@ -14,7 +14,8 @@ let besubject: BehaviorSubject<String> = BehaviorSubject(value: "🌹")
 // t = 1
 besubject.subscribe { (event) in
     print("1> BehaviorSubject first Subscribe", event)
-}.disposed(by: bag)
+}
+    .disposed(by: bag)
 
 // t = 2
 besubject.onNext("A")
@@ -22,7 +23,8 @@ besubject.onNext("A")
 // t = 3
 besubject.subscribe { (event) in
     print("2> BehaviorSubject second Subscribe", event)
-}.disposed(by: bag)
+}
+    .disposed(by: bag)
 
 // t = 4
 besubject.onNext("B")
@@ -129,3 +131,23 @@ s1.onCompleted()
 s2.onCompleted()
 
 print("---------------------------------------")
+
+//: HO & CO
+
+let intervalSequence = Observable<Int>
+    .interval(1, scheduler: MainScheduler.instance)
+    .take(3)
+
+intervalSequence
+    .subscribe { value in
+    print("s1 Next \(value)")
+}
+    .disposed(by: bag)
+
+intervalSequence
+    .subscribe { value in
+        print("s2 Next \(value)")
+    }
+    .disposed(by: bag)
+
+

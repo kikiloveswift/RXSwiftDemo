@@ -9,6 +9,7 @@
 import UIKit
 
 import RxSwift
+import SwiftyJSON
 
 final class ProductTableViewController: UITableViewController {
 
@@ -18,7 +19,7 @@ final class ProductTableViewController: UITableViewController {
     
     private let bag = DisposeBag()
     
-    private let net = PublishSubject<[ String : Any ]>()
+    private let vm = ViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,29 +39,18 @@ final class ProductTableViewController: UITableViewController {
     
     func setupData() {
         
-        // subscribe
-        net.subscribe { (event) in
-            
-        }.disposed(by: bag)
-        
-        // request data
-        let path = Bundle.main.url(forResource: "product.json", withExtension: nil)
-        let decoder = JSONDecoder()
-        guard let urlPath = path,
-            let data = try? Data(contentsOf: urlPath, options: .mappedIfSafe),
-//            let jsonData = try? JSONSerialization.jsonObject(with:data, options: .mutableContainers),
-            let json = try? decoder.decode([Product].self, from: data) else {
-            return
+        vm.fetchNew()
+            .take(1, scheduler: MainScheduler.instance)
+            .subscribe { (event) in
+                print("RxSwift Resources Count \(RxSwift.Resources.total)")
+                guard let obj = event.element as? [Product] else {
+                    return
+                }
+                self.dataArr = obj
+                self.tableView.reloadData()
+
         }
-        
-        dataArr = json
-        tableView.reloadData()
-        
-        
-        
-        // serialJSON
-        
-        // sendNext()
+            .disposed(by: self.bag)
     }
     
     
