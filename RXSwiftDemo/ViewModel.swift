@@ -9,7 +9,8 @@
 import UIKit
 import RxSwift
 
-class ViewModel {
+final class ViewModel {
+    
     func fetchNew() -> Observable<Any> {
         
         return Observable.create { (subscribe) -> Disposable in
@@ -24,8 +25,8 @@ class ViewModel {
                     subscribe.onError(NSError(domain: "com.error", code: 500, userInfo: nil))
                     return Disposables.create()
             }
-            
             subscribe.onNext(json)
+            subscribe.onCompleted()
             return Disposables.create()
         }
     }

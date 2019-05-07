@@ -18,6 +18,7 @@ final class ViewController: UITableViewController {
         super.viewDidLoad()
         configSetting()
         setupData()
+        
     }
 
     
@@ -26,14 +27,14 @@ final class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func configSetting() {
+    private func configSetting() {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
         tableView.tableFooterView = UIView()
         self.title = "🌹"
     }
     
-    func setupData() {
+    private func setupData() {
         dataArr = [
             "ProductTableViewController"
         ]

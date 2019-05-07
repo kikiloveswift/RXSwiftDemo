@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
 import RxSwift
-import SwiftyJSON
 
 final class ProductTableViewController: UITableViewController {
 
@@ -27,22 +25,20 @@ final class ProductTableViewController: UITableViewController {
         setupData()
     }
     
-    func configSetting() {
+    private func configSetting() {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         tableView.register(UINib(nibName: "ProductCellTableViewCell", bundle: nil), forCellReuseIdentifier: identifier)
         tableView.tableFooterView = UIView()
         
         self.title = "希腊"
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.view.backgroundColor = UIColor.white
     }
     
-    func setupData() {
+    private func setupData() {
         
         vm.fetchNew()
             .take(1, scheduler: MainScheduler.instance)
-            .subscribe { (event) in
-                print("RxSwift Resources Count \(RxSwift.Resources.total)")
+            .subscribe { event in
                 guard let obj = event.element as? [Product] else {
                     return
                 }
@@ -53,8 +49,10 @@ final class ProductTableViewController: UITableViewController {
             .disposed(by: self.bag)
     }
     
+    deinit {
+        print("RxSwift Resources total \(RxSwift.Resources.total)")
+    }
     
-
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -67,7 +65,7 @@ final class ProductTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ProductCellTableViewCell else {
-            return UITableViewCell()
+            fatalError("xib identifier error")
         }
         
         cell.selectionStyle = .none
