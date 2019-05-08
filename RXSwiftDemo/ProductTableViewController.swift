@@ -37,7 +37,7 @@ final class ProductTableViewController: UITableViewController {
     private func setupData() {
         
         vm.fetchNew()
-            .take(1, scheduler: MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance)
             .subscribe { event in
                 guard let obj = event.element as? [Product] else {
                     return
