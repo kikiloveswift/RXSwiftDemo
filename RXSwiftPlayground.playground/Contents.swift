@@ -132,7 +132,7 @@ s2.onCompleted()
 
 print("---------------------------------------")
 
-//: HO & CO
+//: CO
 
 let intervalSequence = Observable<Int>
     .interval(1, scheduler: MainScheduler.instance)
@@ -150,4 +150,6 @@ intervalSequence
     }
     .disposed(by: bag)
 
+
+print("---------------------------------------")
 

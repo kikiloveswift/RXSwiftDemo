@@ -11,7 +11,9 @@ import RxSwift
 
 final class ViewModel {
     
-    func fetchNew() -> Observable<Any> {
+    private let queue = DispatchQueue(label: "com.rxDemo.FetchDataThread")
+    
+    func fetchNew() -> Observable<[Any]> {
         
         return Observable.create { (subscribe) -> Disposable in
             
@@ -25,8 +27,9 @@ final class ViewModel {
                     subscribe.onError(NSError(domain: "com.error", code: 500, userInfo: nil))
                     return Disposables.create()
             }
+           
             subscribe.onNext(json)
-//            subscribe.onCompleted()
+            
             return Disposables.create()
         }
     }

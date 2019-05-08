@@ -36,15 +36,18 @@ final class ProductTableViewController: UITableViewController {
     
     private func setupData() {
         _ = vm.fetchNew()
-            .subscribeOn(MainScheduler.instance)
-            .subscribe { event in
-                guard let obj = event.element as? [Product] else {
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { event in
+                guard let obj = event as? [Product] else {
                     return
                 }
                 self.dataArr = obj
                 self.tableView.reloadData()
-
-        }
+                
+            }, onError: { (error) in
+                print(error)
+            })
 //            .disposed(by: self.bag)
     }
     
