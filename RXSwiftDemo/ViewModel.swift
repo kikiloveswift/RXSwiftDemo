@@ -26,7 +26,7 @@ final class ViewModel {
                     return Disposables.create()
             }
             subscribe.onNext(json)
-            subscribe.onCompleted()
+//            subscribe.onCompleted()
             return Disposables.create()
         }
     }

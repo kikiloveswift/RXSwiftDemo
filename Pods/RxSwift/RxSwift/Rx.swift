@@ -27,7 +27,9 @@
         ///
         /// - returns: New resource count
         public static func decrementTotal() -> Int32 {
-            return AtomicDecrement(&resourceCount)
+            let a = AtomicDecrement(&resourceCount)
+            print("RxSwift Resources decrementTotal \(RxSwift.Resources.total)")
+            return a
         }
     }
 #endif

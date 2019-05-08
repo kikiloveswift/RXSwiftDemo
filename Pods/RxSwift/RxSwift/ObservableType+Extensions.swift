@@ -22,7 +22,8 @@ extension ObservableType {
             let observer = AnonymousObserver { e in
                 on(e)
             }
-            return self.asObservable().subscribe(observer)
+            let a = self.asObservable().subscribe(observer)
+            return a
     }
     
     

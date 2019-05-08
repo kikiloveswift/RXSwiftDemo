@@ -35,8 +35,7 @@ final class ProductTableViewController: UITableViewController {
     }
     
     private func setupData() {
-        
-        vm.fetchNew()
+        _ = vm.fetchNew()
             .subscribeOn(MainScheduler.instance)
             .subscribe { event in
                 guard let obj = event.element as? [Product] else {
@@ -46,7 +45,7 @@ final class ProductTableViewController: UITableViewController {
                 self.tableView.reloadData()
 
         }
-            .disposed(by: self.bag)
+//            .disposed(by: self.bag)
     }
     
     deinit {
