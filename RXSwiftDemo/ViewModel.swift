@@ -15,7 +15,7 @@ final class ViewModel {
     
     func fetchNew() -> Observable<[Any]> {
         
-        return Observable.create { (subscribe) -> Disposable in
+        return Observable.create { (observer) -> Disposable in
             
             let decoder = JSONDecoder()
             
@@ -24,11 +24,11 @@ final class ViewModel {
             guard let urlPath = path,
                 let data = try? Data(contentsOf: urlPath, options: .mappedIfSafe),
                 let json = try? decoder.decode([Product].self, from: data) else {
-                    subscribe.onError(NSError(domain: "com.error", code: 500, userInfo: nil))
+                    observer.onError(NSError(domain: "com.error", code: 500, userInfo: nil))
                     return Disposables.create()
             }
            
-            subscribe.onNext(json)
+            observer.onNext(json)
             
             return Disposables.create()
         }

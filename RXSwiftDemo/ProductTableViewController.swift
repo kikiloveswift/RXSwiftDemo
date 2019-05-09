@@ -48,7 +48,6 @@ final class ProductTableViewController: UITableViewController {
             }, onError: { (error) in
                 print(error)
             })
-//            .disposed(by: self.bag)
     }
     
     deinit {

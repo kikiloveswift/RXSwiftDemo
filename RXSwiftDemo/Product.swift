@@ -11,5 +11,5 @@ struct Product: Codable {
     let name: String
     let subName: String
     let price: Float
-    let imageurl: String
+    let imageURL: String
 }

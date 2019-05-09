@@ -31,7 +31,7 @@ final class ProductCellTableViewCell: UITableViewCell {
         subName.text = model.subName
         price.text = "￥ " + "\(model.price)"
         
-        guard let url = URL(string: model.imageurl + "?imageView2/1/q/90/w/240/h/240/") else {
+        guard let url = URL(string: model.imageURL + "?imageView2/1/q/90/w/240/h/240/") else {
             return
         }
         productImage.sd_setImage(with: url, completed: nil)
