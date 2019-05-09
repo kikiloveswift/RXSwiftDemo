@@ -10,8 +10,6 @@ import UIKit
 import RxSwift
 
 final class ProductTableViewController: UITableViewController {
-
-    private var dataArr: [Product] = []
     
     private let identifier = "productCell"
     
@@ -35,19 +33,15 @@ final class ProductTableViewController: UITableViewController {
     }
     
     private func setupData() {
-        _ = vm.fetchNew()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+        vm.fetchNew()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { event in
-                guard let obj = event as? [Product] else {
-                    return
-                }
-                self.dataArr = obj
+            .subscribe(onNext: { [unowned self] _ in
                 self.tableView.reloadData()
                 
             }, onError: { (error) in
                 print(error)
             })
+        .disposed(by: bag)
     }
     
     deinit {
@@ -60,7 +54,7 @@ final class ProductTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArr.count
+        return vm.dataArr.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,7 +64,7 @@ final class ProductTableViewController: UITableViewController {
         }
         
         cell.selectionStyle = .none
-        cell.bind(dataArr[indexPath.row])
+        cell.bind(vm.dataArr[indexPath.row])
         
         return cell
     }

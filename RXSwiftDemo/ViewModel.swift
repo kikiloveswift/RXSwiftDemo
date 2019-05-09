@@ -11,7 +11,7 @@ import RxSwift
 
 final class ViewModel {
     
-    private let queue = DispatchQueue(label: "com.rxDemo.FetchDataThread")
+    var dataArr: [Product] = []
     
     func fetchNew() -> Observable<[Any]> {
         
@@ -27,9 +27,9 @@ final class ViewModel {
                     observer.onError(NSError(domain: "com.error", code: 500, userInfo: nil))
                     return Disposables.create()
             }
-           
+            self.dataArr.append(contentsOf: json)
             observer.onNext(json)
-            
+            observer.onCompleted()
             return Disposables.create()
         }
     }

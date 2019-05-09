@@ -1,7 +1,7 @@
 import RxSwift
 
 func print<T: CustomStringConvertible>(label: String, event: Event<T>) {
-    print(label, event.element ?? 0)
+    print(label, event.element ?? 0) 
 }
 
 let bag = DisposeBag()
@@ -152,4 +152,22 @@ intervalSequence
 
 
 print("---------------------------------------")
+
+
+let blueScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
+
+let greenScheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "com.blue.serialQueue")
+
+let redScheduler = MainScheduler.instance
+
+Observable
+    .just(42, scheduler: blueScheduler)
+    .observeOn(greenScheduler)
+    .filter { $0 > 0 }
+    .observeOn(greenScheduler)
+    .subscribeOn(redScheduler)
+    .map { "\($0)" }
+    .observeOn(greenScheduler)
+    .subscribe { print($0) }
+    .disposed(by: bag)
 
